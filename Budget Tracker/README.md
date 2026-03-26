@@ -49,7 +49,7 @@ python budget_tracker_gui.py
 ```
 
 **Or download the executable** from the 
-[Releases](../../releases) page — no Python 
+[Releases](https://github.com/jamesdileva/Python-Projects/releases/tag/v1.0) page — no Python 
 installation required. Windows only.
 ```
 
