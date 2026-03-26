@@ -17,7 +17,7 @@ python news_tracker.py
 ```
 
 **Or download the executable** from the
-[Releases](https://github.com/YOUR-USERNAME/python-projects/releases/tag/news-tracker-v1.0)
+[Releases](https://github.com/jamesdileva/Python-Projects/releases/tag/news-tracker-v1.0)
 page — no Python installation required. Windows only.
 
 ## Setup
