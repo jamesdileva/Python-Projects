@@ -1,0 +1,7 @@
+# Python cache — never push these
+__pycache__/
+*.pyc
+*.pyo
+
+# Log file — generated at runtime
+organizer_log.txt
