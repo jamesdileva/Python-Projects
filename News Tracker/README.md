@@ -6,6 +6,10 @@ and keyword search.
 
 ## How to Run
 
+**download the executable** from the
+[Releases](https://github.com/jamesdileva/Python-Projects/releases/tag/news-tracker-v1.0)
+page — no Python installation required. Windows only.
+
 **GUI version (recommended):**
 ```
 python news_tracker_gui.py
@@ -15,10 +19,6 @@ python news_tracker_gui.py
 ```
 python news_tracker.py
 ```
-
-**Or download the executable** from the
-[Releases](https://github.com/jamesdileva/Python-Projects/releases/tag/news-tracker-v1.0)
-page — no Python installation required. Windows only.
 
 ## Setup
 
