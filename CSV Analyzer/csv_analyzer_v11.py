@@ -268,15 +268,10 @@ class CSVAnalyzerV11(ctk.CTk):
                       text_color=self.C["amber"]).pack(
                       padx=16, pady=(16,8), anchor="w")
 
-        self.lbl_income = self._stat_row(
-            "Income", "$—", self.C["green"])
-        self.lbl_expenses = self._stat_row(
-            "Expenses", "$—", self.C["red"])
-        self.lbl_balance = self._stat_row(
-            "Balance", "$—", self.C["amber"])
-        self.lbl_rows = self._stat_row(
-            "Rows", "—", self.C["slate"])
-
+        self.lbl_income = self._stat_row("Income", "$—", self.C["green"])
+        self.lbl_expenses = self._stat_row("Expenses", "$—", self.C["red"])
+        self.lbl_balance = self._stat_row("Balance", "$—", self.C["amber"])
+        self.lbl_rows     = self._stat_row("Rows", "—", "grey")
         self._divider()
 
     def _build_categories_section(self):
@@ -300,14 +295,10 @@ class CSVAnalyzerV11(ctk.CTk):
                       text_color=self.C["amber"]).pack(
                       padx=16, pady=(8,8), anchor="w")
 
-        self.lbl_highest = self._stat_row(
-            "Highest", "$—", self.C["red"])
-        self.lbl_lowest  = self._stat_row(
-            "Lowest",  "$—", self.C["green"])
-        self.lbl_average = self._stat_row(
-            "Average", "$—", self.C["slate"])
-        self.lbl_median  = self._stat_row(
-            "Median",  "$—", self.C["slate"])
+        self.lbl_highest = self._stat_row("Highest", "$—", self.C["red"])
+        self.lbl_lowest  = self._stat_row("Lowest",  "$—", self.C["green"])
+        self.lbl_average  = self._stat_row("Average", "$—", "grey")
+        self.lbl_median   = self._stat_row("Median",  "$—", "grey")
 
     def _stat_row(self, label, value, color):
         row = ctk.CTkFrame(self.stats_panel,
