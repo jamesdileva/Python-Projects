@@ -48,14 +48,15 @@ def preview_organization(folder_path):
 
     return True
 
-def organize_folder(folder_path):
+def organize_folder(folder_path, progress_callback=None):
     files = [f for f in os.listdir(folder_path)
              if os.path.isfile(os.path.join(folder_path, f))]
 
     moved = 0
     skipped = 0
+    total = len(files)
 
-    for filename in files:
+    for i, filename in enumerate(files):
         ext = os.path.splitext(filename)[1]
         category = get_category(ext)
 
@@ -66,19 +67,25 @@ def organize_folder(folder_path):
         dest = os.path.join(dest_folder, filename)
 
         if os.path.exists(dest):
-            print(f"  ⚠ Skipped (already exists): {filename}")
             skipped += 1
+            if progress_callback:
+                progress_callback(i + 1, total,
+                    f"Skipped (exists): {filename}", skipped=True)
             continue
 
         try:
             shutil.move(src, dest)
             log_move(filename, category, folder_path)
             moved += 1
+            if progress_callback:
+                progress_callback(i + 1, total,
+                    f"Moved: {filename} → {category}")
         except Exception as e:
             log_error(filename, str(e))
-            print(f"  ⚠ Error moving {filename}: {e}")
+            if progress_callback:
+                progress_callback(i + 1, total,
+                    f"Error: {filename}", error=True)
 
-    print(f"\n✓ Done — {moved} files organized, {skipped} skipped")
     return moved, skipped
     
 def get_file_hash(filepath):
@@ -92,24 +99,25 @@ def get_file_hash(filepath):
         log_error(filepath, str(e))
         return None
 
-def find_and_move_duplicates(folder_path):
+def find_and_move_duplicates(folder_path, progress_callback=None):
     files = [f for f in os.listdir(folder_path)
              if os.path.isfile(os.path.join(folder_path, f))]
 
     if not files:
-        print("\nNo files found to check.")
-        return
+        return 0
 
-    print(f"\nScanning {len(files)} files for duplicates...")
-
+    total = len(files)
     seen_hashes = {}
     duplicates_found = 0
-
     duplicates_folder = os.path.join(folder_path, "Duplicates")
 
-    for filename in files:
+    for i, filename in enumerate(files):
         filepath = os.path.join(folder_path, filename)
         file_hash = get_file_hash(filepath)
+
+        if progress_callback:
+            progress_callback(i + 1, total,
+                f"Scanning: {filename}")
 
         if file_hash is None:
             continue
@@ -120,20 +128,20 @@ def find_and_move_duplicates(folder_path):
 
             if os.path.exists(dest):
                 base, ext = os.path.splitext(filename)
-                dest = os.path.join(duplicates_folder, f"{base}_dup{duplicates_found}{ext}")
+                dest = os.path.join(duplicates_folder,
+                    f"{base}_dup{duplicates_found}{ext}")
 
             try:
                 shutil.move(filepath, dest)
-                original = seen_hashes[file_hash]
-                print(f"  ↳ Duplicate found: {filename} (original: {original})")
                 log_move(filename, "Duplicates", folder_path)
                 duplicates_found += 1
+                if progress_callback:
+                    progress_callback(i + 1, total,
+                        f"Duplicate found: {filename}",
+                        duplicate=True)
             except Exception as e:
                 log_error(filename, str(e))
         else:
             seen_hashes[file_hash] = filename
 
-    if duplicates_found == 0:
-        print("\n✓ No duplicates found.")
-    else:
-        print(f"\n✓ {duplicates_found} duplicate(s) moved to Duplicates folder for review.")
+    return duplicates_found
