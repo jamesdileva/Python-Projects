@@ -1,21 +1,8 @@
 # Budget Tracker
 
 A command line budget tracking tool built with Python.
-## Version History
 
-### v1.1 — CustomTkinter Modern UI
-- Complete UI rebuild using CustomTkinter
-- Two panel dashboard layout — input left, data right
-- Summary cards — income, expenses, and balance at a glance
-- Navy and emerald color scheme
-- Rounded corners and modern button styling
-- Themed matplotlib charts — navy dark background
-- Scrollable left panel — no content clipping at any window size
-- Improved dark mode — full coverage across all panels
-
-### v1.0 — Original GUI
-- Tkinter desktop app with tabbed layout
-- Charts, dark mode, Excel and CSV export
+## GUI Version (budget_tracker_gui.py)
 - Full desktop interface built with Tkinter
 - Color coded transaction rows — green for income, red for expenses
 - Live summary bar showing income, expenses, and balance
@@ -51,23 +38,19 @@ A command line budget tracking tool built with Python.
 
 ## How to Run
 
-**download the executable** from the
-[Releases](https://github.com/jamesdileva/python-projects/releases/tag/budget-tracker-v1.1)
-page — no Python installation required. Windows only.
-
-**v1.1 GUI (recommended — modern UI):**
+**Command line version:**
 ```
-python budget_tracker_v11.py
+python budget_tracker.py
 ```
 
-**v1.0 GUI:**
+**GUI version (recommended):**
 ```
 python budget_tracker_gui.py
 ```
 
-**Command line:**
-```
-python budget_tracker.py
+**Or download the executable** from the 
+[Releases](https://github.com/jamesdileva/Python-Projects/releases/tag/budget-tracker-v1.0) page — no Python 
+installation required. Windows only.
 ```
 
 ## Usage

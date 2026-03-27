@@ -34,7 +34,7 @@ python main.py
 - **Duplicate detection** — scans files using MD5 hashing,
   moves true duplicates to a Duplicates folder for review
 - **Undo** — move all organized files back to the root folder
-- **Session log viewer** — every move and ergigit aror recorded with
+- **Session log viewer** — every move and error recorded with
   timestamps, viewable inside the app
 - **Dark mode** — full dark theme with explicit sidebar theming
 - **Status bar** — shows current folder and operation state

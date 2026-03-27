@@ -34,23 +34,5 @@
     "category": "rent",
     "amount": 500.0,
     "description": "roof over head"
-  },
-  {
-    "type": "expense",
-    "category": "fun",
-    "amount": 200.0,
-    "description": "club"
-  },
-  {
-    "type": "income",
-    "category": "side job",
-    "amount": 100.0,
-    "description": "lawn care"
-  },
-  {
-    "type": "expense",
-    "category": "shoes",
-    "amount": 300.0,
-    "description": "nikes"
   }
 ]
