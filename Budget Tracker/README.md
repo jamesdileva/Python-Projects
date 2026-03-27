@@ -1,8 +1,22 @@
 # Budget Tracker
 
 A command line budget tracking tool built with Python.
+## Version History
+## Features
 
-## GUI Version (budget_tracker_gui.py)
+### v1.1 — CustomTkinter Modern UI
+- Complete UI rebuild using CustomTkinter
+- Two panel dashboard layout — input left, data right
+- Summary cards — income, expenses, and balance at a glance
+- Navy and emerald color scheme
+- Rounded corners and modern button styling
+- Themed matplotlib charts — navy dark background
+- Scrollable left panel — no content clipping at any window size
+- Improved dark mode — full coverage across all panels
+
+### v1.0 — Original GUI Version (budget_tracker_gui.py)
+- Tkinter desktop app with tabbed layout
+- Charts, dark mode, Excel and CSV export
 - Full desktop interface built with Tkinter
 - Color coded transaction rows — green for income, red for expenses
 - Live summary bar showing income, expenses, and balance
@@ -14,8 +28,6 @@ A command line budget tracking tool built with Python.
 - Dark mode toggle
 - Data persists between sessions via JSON
 
-## Features
-
 ### Command Line Version
 - Add income and expense transactions
 - View summary — total income, expenses, and balance
@@ -24,44 +36,26 @@ A command line budget tracking tool built with Python.
 - Input validation for all fields
 - Data persistence — saves and loads between sessions via JSON
 
-### GUI Version
-- Full desktop interface built with Tkinter
-- Color coded transaction rows — green for income, red for expenses
-- Live summary bar showing income, expenses, and balance
-- Add, delete, and edit transactions
-- Spending by category — bar chart and pie chart using matplotlib
-- Income vs expenses comparison chart with surplus/deficit indicator
-- Export to Excel with formatted headers and summary totals
-- Export to CSV
-- Dark mode toggle
-- Data persists automatically between sessions via JSON
-
 ## How to Run
+
+**download the executable(recommended)** from the 
+[Releases](https://github.com/jamesdileva/Python-Projects/releases/tag/budget-tracker-v1.1) page — no Python 
+installation required. Windows only.
+```
 
 **Command line version:**
 ```
 python budget_tracker.py
 ```
 
-**GUI version (recommended):**
+**GUI version:**
 ```
 python budget_tracker_gui.py
 ```
 
-**Or download the executable** from the 
-[Releases](https://github.com/jamesdileva/Python-Projects/releases/tag/budget-tracker-v1.0) page — no Python 
-installation required. Windows only.
+
 ```
-
 ## Usage
-
-### Command Line Version
-1. Add Income — log a source of income with category and description
-2. Add Expense — log an expense with category and description
-3. View Summary — see total income, expenses, and current balance
-4. View All Transactions — see a detailed list of every transaction
-5. Delete a Transaction — remove an entry by number
-6. Exit
 
 ### GUI Version
 - **Add Transaction** — select type, enter category, amount, and description
@@ -73,6 +67,14 @@ installation required. Windows only.
 - **Export to CSV** — saves all transactions as a standard CSV file
 - **Dark Mode** — toggles between light and dark theme
 - All data saves automatically between sessions
+
+### Command Line Version
+1. Add Income — log a source of income with category and description
+2. Add Expense — log an expense with category and description
+3. View Summary — see total income, expenses, and current balance
+4. View All Transactions — see a detailed list of every transaction
+5. Delete a Transaction — remove an entry by number
+6. Exit
 
 ## Roadmap
 The following features are planned for future development:
