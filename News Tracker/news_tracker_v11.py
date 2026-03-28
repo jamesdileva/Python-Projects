@@ -361,7 +361,7 @@ class NewsTrackerV11(ctk.CTk):
         self.marquee_label = ctk.CTkLabel(
             self.marquee_frame,
             text="Enable marquee after fetching headlines",
-            font=ctk.CTkFont("Courier New", 12, "bold"),
+            font=ctk.CTkFont("Courier New", 18, "bold"),
             text_color=self.C["marquee_fg"],
             fg_color="transparent",
             anchor="w")
@@ -991,7 +991,7 @@ class NewsTrackerV11(ctk.CTk):
         self._popout_label = ctk.CTkLabel(
             self._popout_win,
             text="",
-            font=ctk.CTkFont("Courier New", 12, "bold"),
+            font=ctk.CTkFont("Courier New", 18, "bold"),
             text_color=self.C["marquee_fg"],
             fg_color="transparent",
             anchor="w")
