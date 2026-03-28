@@ -4,13 +4,33 @@ A desktop file organization tool with a modern sidebar interface.
 Point it at any folder and it automatically sorts files into
 subfolders by type, detects duplicates, and keeps a full session log.
 
+## Version History
+
+### v1.1 — CustomTkinter Modern UI
+- Complete UI rebuild using CustomTkinter
+- Forest green and coral color scheme
+- CTkProgressBar replaces ttk.Progressbar
+- CTkTextbox for the log viewer
+- Improved dark mode — explicit label references
+  for title elements
+- Cleaner sidebar with scrollable nav area
+- Welcome screen with centered call to action
+- Forest green status bar matching sidebar theme
+
+### v1.0 — Original GUI
+- Tkinter desktop app with sidebar layout
+- Live progress bar and operation log table
+- Duplicate detection using MD5 hashing
+- Undo organization
+- Session log viewer
+- Dark mode, background threading
+
 ## How to Run
 
 **download the executable** from the
-[Releases](https://github.com/jamesdileva/python-projects/releases/tag/file-organizer-v1.0)
-page — no Python installation required. Windows only.
+[Releases](https://github.com/jamesdileva/python-projects/releases/tag/file-organizer-v1.1) page — no Python installation required. Windows only.
 
-**GUI version (recommended):**
+**GUI version v1.0:**
 ```
 python file_organizer_gui.py
 ```
